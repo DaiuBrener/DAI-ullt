@@ -4,9 +4,10 @@ import { TextInput, StyleSheet, View, Text, Button, FlatList } from "react-nativ
 
 
 export default function Contacto({Contacto}) {
+    console.log(Contacto)
     return(
-        <View>
-
+        <View style={{alignItems:"center"}}>
+            <Text> {Contacto.name} / {Contacto.phoneNumbers && Contacto?.phoneNumbers[0]?.number }</Text>
         </View>
     )
 }

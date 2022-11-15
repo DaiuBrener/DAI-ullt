@@ -5,12 +5,6 @@ function Home({navigation}){
     return(
         <View style={style.container}>
             <Button 
-                title="Contactos"
-                onPress={ () =>{
-                    navigation.navigate('ContactList');
-                }}
-            />
-            <Button 
                 title="Tiempo y Temperatura"
                 onPress={(e)=> {navigation.navigate('ActualTimeTemperature')}}
             />

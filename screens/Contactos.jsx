@@ -5,6 +5,20 @@ import Contacto from "../components/Contacto";
 
 export default function App() {
     const [contactos, setContactos] = useState()
+    const [contactoEmergencia, setContactoEmergencia] = useState()
+    const traer = async () => {
+        try {
+            const value = await AsyncStorage.getItem('Emergencia');
+            if (value !== null) {
+                // We have data!!
+                setContactoEmergencia(value);
+            }
+        } catch (error) {
+            // Error retrieving data
+
+        }
+    }
+   
     useEffect(() => {
         (async () => {
             const { status } = await Contacts.requestPermissionsAsync();
@@ -14,16 +28,18 @@ export default function App() {
                 });
                 setContactos(data)
             }
+            traer()
         })();
     }, []);
 
     const renderItem = ({ item }) => (
-        <Contacts Contacto={item} />
+        <Contacto Contacto={item} Emergencia={contactoEmergencia} />
     );
 
 
     return (
         <View>
+            <Text>Contactos</Text>
             <FlatList
                 data={contactos}
                 renderItem={renderItem}
