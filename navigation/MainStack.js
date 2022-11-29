@@ -6,6 +6,7 @@ import Home from '../screens/Home'
 import Emergencia from '../screens/Emergencia'
 import Contactos from '../screens/Contactos'
 import HorayTemp from '../screens/HorayTemp';
+import QRScanner from '../screens/About';
 
 
 const Stack = createNativeStackNavigator()
@@ -36,6 +37,11 @@ const MainStack = () => {
                 <Stack.Screen
                     name='Hora y Temperatura'>
                     {(props) => <HorayTemp {...props}
+                    />}
+                </Stack.Screen>
+                <Stack.Screen
+                    name='Qr app'>
+                    {(props) => <QRScanner {...props}
                     />}
                 </Stack.Screen>
             </Stack.Navigator>

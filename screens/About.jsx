@@ -35,9 +35,9 @@ export default function QRScanner() {
     return (
         <SafeAreaView style={styles.container}>
             <Text>QRScanner</Text>
-            <QRCode
+            {/* <QRCode
                 value="Hecho por Daiana Brener"
-            />
+            /> */}
             <Button  
             disabled={clikScan} 
             onPress={() => { setClikScan(true) }} 

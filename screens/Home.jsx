@@ -14,7 +14,7 @@ function Home({navigation}){
             />
             <Button 
                 title="QR de la App"
-                onPress={(e)=> {navigation.navigate('AppID')}}
+                onPress={(e)=> {navigation.navigate('Qr app')}}
             />
             <Button 
                 title="Lista de Contactos"
