@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { TextInput, StyleSheet, View, Text, Button } from "react-native"
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Vibrar from "../components/AlertaError";
 
 function Emergencia() {
     const [numero, setNumero] = useState(0)
@@ -10,7 +11,7 @@ function Emergencia() {
         try {
             await AsyncStorage.setItem('Emergencia', num)
         } catch (e) {
-            // saving error
+            Vibrar("Error de Numero de Emergencia")
         }
     }
 
@@ -22,7 +23,7 @@ function Emergencia() {
                 setLocalNumero(value);
             }
         } catch (error) {
-            // Error retrieving data
+            Vibrar("Error de Numero de Emergencia")
 
         }
     }

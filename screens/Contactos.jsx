@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { TextInput, StyleSheet, View, Text, Button, FlatList } from "react-native"
 import * as Contacts from 'expo-contacts';
 import Contacto from "../components/Contacto";
+import Vibrar from "../components/AlertaError";
 
 export default function App() {
     const [contactos, setContactos] = useState()
@@ -10,15 +11,15 @@ export default function App() {
         try {
             const value = await AsyncStorage.getItem('Emergencia');
             if (value !== null) {
-                // We have data!!
+                //tengo data
                 setContactoEmergencia(value);
             }
         } catch (error) {
-            // Error retrieving data
+            Vibrar("Error de Contacto")
 
         }
     }
-   
+
     useEffect(() => {
         (async () => {
             const { status } = await Contacts.requestPermissionsAsync();

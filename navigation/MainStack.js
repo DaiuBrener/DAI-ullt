@@ -5,6 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import Home from '../screens/Home'
 import Emergencia from '../screens/Emergencia'
 import Contactos from '../screens/Contactos'
+import HorayTemp from '../screens/HorayTemp';
+
 
 const Stack = createNativeStackNavigator()
 
@@ -29,6 +31,11 @@ const MainStack = () => {
                 <Stack.Screen
                     name='Contactos'>
                     {(props) => <Contactos {...props}
+                    />}
+                </Stack.Screen>
+                <Stack.Screen
+                    name='Hora y Temperatura'>
+                    {(props) => <HorayTemp {...props}
                     />}
                 </Stack.Screen>
             </Stack.Navigator>

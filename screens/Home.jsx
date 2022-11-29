@@ -5,8 +5,8 @@ function Home({navigation}){
     return(
         <View style={style.container}>
             <Button 
-                title="Tiempo y Temperatura"
-                onPress={(e)=> {navigation.navigate('ActualTimeTemperature')}}
+                title="Hora y Temperatura"
+                onPress={(e)=> {navigation.navigate('Hora y Temperatura')}}
             />
             <Button 
                 title="Emergencia"
